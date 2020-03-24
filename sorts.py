@@ -14,7 +14,7 @@ class Sorter(ABC):
 		return NotImplemented
 
 
-class BubbleSorter(Sorter):
+class Bubble(Sorter):
 	def sort(self, arr):
 		for i in range(len(arr)-1):
 			for j in range(len(arr)-1):

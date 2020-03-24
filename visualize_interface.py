@@ -2,11 +2,15 @@ from abc import ABC, abstractmethod
 
 class Visualizer(ABC):
 	@abstractmethod
-	def __init__(self, width, height, num_elts):
+	def __init__(self, initial_data):
 		pass
 
 	@abstractmethod
-	def meow(self):
+	def set(self, key, val):
+		pass
+
+	@abstractmethod
+	def focus(self, *elts):
 		pass
 
 	@abstractmethod
