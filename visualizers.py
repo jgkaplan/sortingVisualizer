@@ -11,6 +11,9 @@ class NoVis(Visualizer):
 	def focus(self, *elts):
 		pass
 
+	def clear_focus(self):
+		pass
+
 	def exit(self):
 		pass
 
@@ -46,12 +49,11 @@ class BarVis(Visualizer):
 		x = self.PADDING + key * (self.BAR_SIZE + self.BAR_GAP)
 		dx = x - self.data[val-1].getP1().getX()
 		self.data[val-1].move(dx, 0)
-
+		
 	def focus(self, *elts):
 		for x in self.focused:
 			if x not in elts:
 				self.data[x-1].setFill(self.BASE_COLOR)
-		
 		self.focused = set()
 		for x in elts:
 			rect = self.data[x-1]

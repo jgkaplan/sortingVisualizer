@@ -7,13 +7,12 @@ from time import sleep
 def main(Visualizer, Sort_class, size):
 	baseArray = [i for i in range(1,size+1)]
 	shuffle(baseArray)
-	vis = Visualizer(baseArray)
 	s = Sort_class()
-	wrapped = WrappedArray(baseArray, vis)
+	wrapped = WrappedArray(baseArray, Visualizer)
 	s.sort(wrapped)
-	vis.exit()
+	wrapped.cleanup()
 
 #requirements: array of length n has elements (1, 2, ... n)
 
 if __name__ == '__main__':
-	main(Visualizer=visualizers.BarVis, Sort_class=sorts.Bubble, size=10)
+	main(Visualizer=visualizers.BarVis, Sort_class=sorts.Selection, size=30)
